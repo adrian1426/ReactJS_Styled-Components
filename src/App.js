@@ -39,6 +39,19 @@ const StyledLink = styled(Link)`
   color:blue;
 `;
 
+const Input = styled.input.attrs(props => ({
+  type: 'text',
+  color: props.color || 'red'
+}))`
+  font-size:20px;
+  border:1px solid red;
+  color:${props => props.color}
+`;
+
+const Pass = styled(Input).attrs({
+  type: 'password'
+})``;
+
 function App() {
   return (
     <Content>
@@ -47,6 +60,8 @@ function App() {
       <BlockButton primary as='a' href="#">Enviar</BlockButton>
       <Link>Link</Link>
       <StyledLink>Link 2</StyledLink>
+      <Input color="blue" />
+      <Pass />
     </Content>
   );
 }
