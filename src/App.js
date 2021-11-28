@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const P = styled.p`
   font-size:24px;
@@ -52,6 +52,21 @@ const Pass = styled(Input).attrs({
   type: 'password'
 })``;
 
+const girar = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  
+  to{
+    transform: rotate(360deg);
+  }
+`;
+
+const Rotar = styled.div`
+  display: inline-block;
+  animation: ${girar} 2s linear infinite;
+`;
+
 function App() {
   return (
     <Content>
@@ -62,6 +77,9 @@ function App() {
       <StyledLink>Link 2</StyledLink>
       <Input color="blue" />
       <Pass />
+      <br />
+
+      <Rotar>giramdo</Rotar>
     </Content>
   );
 }
